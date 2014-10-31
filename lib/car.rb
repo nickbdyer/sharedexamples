@@ -1,6 +1,11 @@
+require_relative 'vehicle'
+
 class Car
 
-  def initialize
+  include Vehicle
+
+  def initialize(options = {})
+    self.speed = options.fetch(:speed, speed)
     @wheels = 4
   end
 

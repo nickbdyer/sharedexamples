@@ -1,9 +1,11 @@
 module Vehicle
 
-  attr_reader :speed
+  attr_writer :speed
 
-  def initialize(speed = 0)
-    @speed = speed
+  DEFAULT_SPEED = 0
+
+  def speed
+    @speed ||= DEFAULT_SPEED
   end
 
   def accelerate
